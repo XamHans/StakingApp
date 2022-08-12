@@ -26,5 +26,12 @@ export const shouldDeposit = (): void => {
         amount
       )).to.be.revertedWith('TransferFailed')
     })
+
+    it("should emit Deposit event", async function() {
+      const amount = parseEther("1")
+      await expect(this.staking.connect(this.signers.alice).deposit(amount))
+        .to.emit(this.staking, "DepositEvent")
+        .withArgs(this.signers.alice.address, this.mocks.mockToken.address, amount)
+    }) 
   });
 };

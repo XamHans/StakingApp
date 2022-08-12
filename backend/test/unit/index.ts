@@ -2,6 +2,7 @@ import { waffle } from "hardhat";
 import { unitStakingFixture } from "../shared/fixtures";
 import { Mocks, Signers } from "../shared/types";
 import { shouldDeposit } from "./Staking/StakingShouldDeposit";
+import { shouldWithdrawl } from "./Staking/StakingShouldWithdrawl";
 
 describe(`Unit tests`, async () => {
   before(async function () {
@@ -26,5 +27,6 @@ describe(`Unit tests`, async () => {
     });
 
     shouldDeposit();
+    shouldWithdrawl()
   });
 });
