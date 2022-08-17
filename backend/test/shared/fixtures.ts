@@ -21,7 +21,7 @@ export const unitStakingFixture: Fixture<UnitStakingFixtureType> = async (
 
   const staking: Staking = (await stakingFactory
     .connect(deployer)
-    .deploy(mockToken.address)) as Staking;
+    .deploy(mockToken.address, mockToken.address)) as Staking;
 
   await staking.deployed();
 

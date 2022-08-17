@@ -1,7 +1,7 @@
 import { waffle } from "hardhat";
 import { unitStakingFixture } from "../shared/fixtures";
 import { Mocks, Signers } from "../shared/types";
-import { shouldDeposit } from "./Staking/StakingShouldDeposit";
+import { shouldStake } from "./Staking/StakingShouldStake";
 import { shouldWithdrawl } from "./Staking/StakingShouldWithdrawl";
 
 describe(`Unit tests`, async () => {
@@ -26,7 +26,7 @@ describe(`Unit tests`, async () => {
       this.mocks.mockToken = mockToken;
     });
 
-    shouldDeposit();
+    shouldStake();
     shouldWithdrawl()
   });
 });
